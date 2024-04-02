@@ -1,30 +1,38 @@
+
+// import React from "react";
+// import './../styles/App.css';
+// import About from "./About";
+// import Home from "./Home";
+// import {Routes, Route} from "react-router-dom";
+// const App = () => {
+//   return (
+//     <div>
+        
+//         <Routes>
+//           <Route path="/" element ={<Home/>}/>
+//           <Route path="/about" element={<About/>}/>
+//         </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
 import React from "react";
-import './../styles/App.css';
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-
-const App = () => {
-  return (
-    <div id="main">
-        {/* Do not remove the main div */}
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Switch from "./Switch";
+const App= ()=>{
+    return(
         <BrowserRouter>
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/about'>About</Link>
-            </li>
-          </ul>
-
-          <Routes>
-            <Route path="/" element={<h1 id="home">Welcome to my website!</h1>} />
-            <Route path="/about" element={
-                <p id="about">This is a sample React Router program.</p>
-            } />
-          </Routes>
+            <Routes>
+                <Route path="" element={<Switch />} >
+                    <Route path="" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                </Route>
+            </Routes>
         </BrowserRouter>
-    </div>
-  )
+    )
 }
-
 export default App
