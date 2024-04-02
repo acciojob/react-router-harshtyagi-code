@@ -1,29 +1,23 @@
 import React from "react";
 import './../styles/App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "../Pages/Home";
+import About from "../Pages/About";
+import Header from "./Header";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Router>
-  );
+    <div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+      {/* Do not remove the main div */}
+    </div>
+  )
 }
 
 export default App;

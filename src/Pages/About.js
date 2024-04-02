@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
 function About() {
   return (
     <div>
-      <h2>About</h2>
+      <h1>About</h1>
       <p>This is a sample React Router program.</p>
     </div>
-  );
+  )
 }
 
 export default About;
